@@ -1,0 +1,259 @@
+{
+	"info": {
+		"_postman_id": "e8d49110-0e7e-43c2-815a-ac137fafd2c6",
+		"name": "CS544-Project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Rayen Location",
+			"item": [
+				{
+					"name": "Get Locations (Paged)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/badge-system/locations"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Locations (Fetch All)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/badge-system/members?fetch-all=true",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"badge-system",
+								"members"
+							],
+							"query": [
+								{
+									"key": "fetch-all",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Location by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/badge-system/locations/2"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Count of Locations",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/badge-system/locations/count"
+					},
+					"response": []
+				},
+				{
+					"name": "Search Locations (Paged)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/badge-system/members/search?query=name:Payman",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"badge-system",
+								"members",
+								"search"
+							],
+							"query": [
+								{
+									"key": "query",
+									"value": "name:Payman"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search Locations (Fetch All)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/badge-system/locations/search?fetch-all=true&query=name:dddd",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"badge-system",
+								"locations",
+								"search"
+							],
+							"query": [
+								{
+									"key": "fetch-all",
+									"value": "true"
+								},
+								{
+									"key": "query",
+									"value": "name:dddd"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search Locations Count",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/badge-system/locations/search/count?query=name:dddd",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"badge-system",
+								"locations",
+								"search",
+								"count"
+							],
+							"query": [
+								{
+									"key": "query",
+									"value": "name:dddd"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post Location",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": "http://localhost:8080/badge-system/locations"
+					},
+					"response": []
+				},
+				{
+					"name": "Put Location",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n            \"name\": \"dddd\",\r\n            \"type\": \"GYM\",\r\n            \"id\": 2,\r\n            \"description\": \"aaadada\"\r\n        }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/badge-system/locations/2"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Location",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:8080/badge-system/locations/4"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Rayen Records",
+			"item": [
+				{
+					"name": "Post Record for ScannerId",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": "http://localhost:8080/badge-system/scanners/1/record"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Record ByScannerId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/badge-system/scanners/1/record"
+					},
+					"response": []
+				},
+				{
+					"name": "Put Record for ScannerId",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": "http://localhost:8080/badge-system/scanners/1/record/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Record For ScannerId",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:8080/badge-system/scanners/1/record/1"
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": {
+			"password": "123",
+			"username": "user"
+		}
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

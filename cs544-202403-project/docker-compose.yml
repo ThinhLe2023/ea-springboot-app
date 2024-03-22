@@ -1,0 +1,24 @@
+# Use root/example as user/password credentials
+version: '3.1'
+
+services:
+
+  db:
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 123456 #user: root
+    ports:
+      - 3306:3306
+
+  activemq:
+    image: rmohr/activemq:5.10.0
+    container_name: activemq
+    environment:
+      - "TZ=Europe/Amsterdam"
+    volumes:
+      - "./activemq/activemq.xml:/conf/activemq.xml"
+    ports:
+      - "61616:61616" # broker (admin:adminactivemq)(amq:amq)
+      - "8161:8161"   # web    http://boot2docker:8161/admin (admin:adm
